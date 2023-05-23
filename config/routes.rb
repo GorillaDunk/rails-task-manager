@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  #home
+
   get '/tasks', to: "tasks#index"
 
   get '/tasks/new', to: "tasks#new"
-  #find
+
   get '/tasks/:id', to: "tasks#show", as: :task
 
-  POST '/tasks/create', to: "tasks#create"
+  post '/tasks', to: "tasks#create"
+
+  get "/tasks/:id/edit", to: "tasks#edit", as: :update
+
+  patch '/tasks/:id', to: "tasks#update"
+
+  delete "/tasks", to: "tasks#destroy", as: :delete
+
 end

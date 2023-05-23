@@ -1,2 +1,5 @@
 <h1><%= @task[:title]%></h1>
+<h1><%= @task[:details]%></h1>
+<h1><%= @task[:completed]%></h1>
+<%= link_to "Edit this task", update_path %>
 <%= link_to "back to  the list", tasks_path  %>
