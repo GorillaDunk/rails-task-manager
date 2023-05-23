@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  #home
+  get '/tasks', to: "tasks#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/tasks/new', to: "tasks#new"
+  #find
+  get '/tasks/:id', to: "tasks#show", as: :task
+
+  POST '/tasks/create', to: "tasks#create"
 end
